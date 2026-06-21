@@ -50,3 +50,12 @@ mapas/
 map-wmts/public/mapas/
 debug.log
 data_creator.json
+
+# Angular
+.angular/
+.angular/cache/
+/out-tsc/
+/bazel-out/
+/tmp/
+/coverage/
+/typings/
