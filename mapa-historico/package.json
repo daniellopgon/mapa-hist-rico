@@ -1,0 +1,43 @@
+{
+  "name": "leaflet-offline-generator",
+  "version": "1.0.0",
+  "description": "Sistema profesional de generación de rutas offline",
+  "main": "main.js",
+  "scripts": {
+    "dev": "npm run dev --prefix map-wmts",
+    "build": "npm run build --prefix map-wmts",
+    "server": "node --experimental-strip-types server.ts",
+    "generar-google": "node --experimental-strip-types scripts/generador-desde-google.ts",
+    "extract-maps": "node --experimental-strip-types scripts/map-extractor.ts"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "openrouteservice-js": "^0.2.0",
+    "protomaps-leaflet": "^5.1.0",
+    "pmtiles": "^4.4.0",
+    "leaflet": "^1.9.4",
+    "idb": "^8.0.3",
+    "jsdom": "^22.1.0",
+    "@tmcw/togeojson": "^7.1.2",
+    "@angular/animations": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@angular/platform-browser-dynamic": "^21.0.0",
+    "@angular/router": "^21.0.0",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^21.0.0",
+    "@angular/cli": "^21.0.0",
+    "@angular/compiler-cli": "^21.0.0",
+    "typescript": "~5.9.0"
+  }
+}
