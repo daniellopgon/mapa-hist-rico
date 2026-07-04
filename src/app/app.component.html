@@ -1,8 +1,2 @@
-<main style="width: 100vw; height: 100vh; overflow: hidden; margin: 0; padding: 0;">
-  @if (mapState.visitaSeleccionada()) {
-    <app-map-viewer></app-map-viewer>
-  } @else {
-    <app-visit-list></app-visit-list>
-  }
-</main>
-<router-outlet />
+<app-mapa [datosMapa]="datosDelMapa"></app-mapa>
+<router-outlet></router-outlet>

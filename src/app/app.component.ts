@@ -1,16 +1,22 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { VisitListComponent } from './components/visit-list/visit-list.component';
-import { MapViewerComponent } from './components/map-viewer/map-viewer.component';
-import { MapStateService } from './services/map-state.service';
+import { MapaComponent } from './components/map-viewer/mapa.component';
+import { MapaService } from './services/mapa.service';
+import { DatosMapa } from './models/datos-mapa';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, VisitListComponent, MapViewerComponent],
+  imports: [RouterOutlet, MapaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  public mapState = inject(MapStateService);
+export class AppComponent implements OnInit {
+  public datosDelMapa: DatosMapa | null = null;
+
+  constructor(private mapaService: MapaService) {}
+
+  async ngOnInit() {
+    // Pedimos los datos de 'avila' al backend
+    this.datosDelMapa = await this.mapaService.obtenerMapa('avila');
+  }
 }

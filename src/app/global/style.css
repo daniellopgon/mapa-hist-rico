@@ -1,0 +1,37 @@
+:root {
+  --dare-teal: #039199;
+  --dare-teal-dark: #027177;
+  --white: #ffffff;
+  --bg-gray: #f7f7f7;
+  --text-primary: #1a1a2e;
+  --text-secondary: #444444;
+  --text-muted: #666666;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --radius: 16px;
+  --color-error: #ff4d4d;
+  --bg-progreso: #e0f2f1;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-gray);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* --- Marcadores personalizados de Leaflet --- */
+.poi-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c62828;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
