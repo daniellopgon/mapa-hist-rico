@@ -16,7 +16,7 @@ export const CONFIG_MAPA = {
     // Configuración de zoom
     ZOOM_INICIAL: 16,
     MIN_ZOOM_LOD: 15,
-    MAX_ZOOM: 19,
+    MAX_ZOOM: 18,
 
     // Capa base
     ARCGIS_URL: 'https://tiles.arcgis.com/tiles/tIcvkZLogWoN4oaH/arcgis/rest/services/Benito_Chías_y_Carbó_1932/MapServer/tile/{z}/{y}/{x}',
@@ -37,6 +37,7 @@ export const CONFIG_ICONO = {
     PUNTO_INTERES: {
         tamano: [30, 30] as [number, number],
         anclaje: [15, 15] as [number, number]
+    }
 };
 
 export const MAPA_AVILA_MOCK: DatosMapa = {
@@ -51,22 +52,26 @@ export const MAPA_AVILA_MOCK: DatosMapa = {
         { 
             nombre: 'Casa de los Verdugo', 
             coordenadas: [40.6581, -4.6966],
-            imagen: 'assets/casa-de-los-verdugo.jpg'
+            imagen: 'assets/casa-de-los-verdugo.jpg',
+            descripcion: 'Casa señorial del siglo XVI, famosa por su imponente fachada plateresca y su patio interior.'
         },
         { 
             nombre: 'Muralla - Puerta de San Segundo', 
             coordenadas: [40.6575, -4.7072],
-            imagen: 'assets/muralla-puerta-del-puente-o-de-san-segundo.jpg'
+            imagen: 'assets/muralla-puerta-del-puente-o-de-san-segundo.jpg',
+            descripcion: 'Una de las nueve puertas de acceso de la muralla, situada junto a la ermita de San Segundo y el río Adaja.'
         },
         { 
             nombre: 'Muralla - Puerta del Rastro', 
             coordenadas: [40.6542, -4.6995],
-            imagen: 'assets/muralla-puerta-del-rastro.jpg'
+            imagen: 'assets/muralla-puerta-del-rastro.jpg',
+            descripcion: 'Puerta flanqueada por un robusto torreón, conectada con el histórico palacio renacentista de los Dávila.'
         },
         { 
             nombre: 'Iglesia de San Pedro', 
             coordenadas: [40.6555, -4.6935],
-            imagen: 'assets/san-pedro.jpg'
+            imagen: 'assets/san-pedro.jpg',
+            descripcion: 'Impresionante templo románico del siglo XII situado extramuros en la Plaza de Santa Teresa.'
         }
     ]
 };

@@ -1,0 +1,6 @@
+<div class="smartguide-marker" [class.sg-marker-gray]="isGray()" [class.sg-marker-color]="!isGray()">
+    <div class="sg-pin">
+        <div class="sg-photo" [style.background-image]="'url(' + (marcador().imagen || '') + ')'"></div>
+    </div>
+    <div class="sg-label">{{ marcador().nombre }}</div>
+</div>

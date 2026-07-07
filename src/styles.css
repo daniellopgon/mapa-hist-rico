@@ -39,10 +39,10 @@ html, body {
 }
 
 .sg-pin {
-  width: 100px;
-  height: 120px;
+  width: 60px;
+  height: 72px;
   background-color: white;
-  clip-path: path('M50,0 C22,0 0,22 0,50 C0,85 50,120 50,120 C50,120 100,85 100,50 C100,22 78,0 50,0 Z');
+  clip-path: path('M30,0 C13.2,0 0,13.2 0,30 C0,51 30,72 30,72 C30,72 60,51 60,30 C60,13.2 46.8,0 30,0 Z');
   position: relative;
   display: flex;
   justify-content: center;
@@ -60,13 +60,13 @@ html, body {
 }
 
 .sg-photo {
-  width: 86px;
-  height: 86px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
   position: absolute;
-  top: 7px;
+  top: 5px;
   transition: all 0.3s ease;
 }
 
@@ -80,42 +80,19 @@ html, body {
   top: 0;
 }
 
-.sg-star {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f5b01c;
-  color: white;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
-  border: 2px solid white;
-  z-index: 100;
-  transition: all 0.3s ease;
-}
 
-.sg-marker-gray .sg-star {
-  opacity: 0.5;
-  background-color: #888;
-  border-color: transparent;
-}
 
 .sg-label {
   color: white;
-  padding: 8px 15px;
+  padding: 4px 10px;
   border-radius: 20px;
-  font-size: 15px;
+  font-size: 11px;
   font-weight: 300;
   text-align: center;
-  max-width: 240px;
+  max-width: 144px;
   line-height: 1.2;
   position: relative;
-  margin-top: -50px;
+  margin-top: -30px;
   z-index: 80;
   text-transform: uppercase;
   transition: all 0.3s ease;
@@ -129,4 +106,49 @@ html, body {
 .sg-marker-gray .sg-label {
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0.8;
+}
+
+/* --- Estados de Zoom y Responsive --- */
+
+/* Cuando el usuario aleja la cámara (zoom-far) */
+.zoom-far .sg-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.zoom-far .sg-pin {
+  transform: scale(0.6);
+  transform-origin: bottom center;
+}
+
+/* Ajustes para móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .sg-pin {
+    transform: scale(0.8);
+    transform-origin: bottom center;
+  }
+
+  .sg-label {
+    font-size: 9px;
+    padding: 3px 8px;
+    max-width: 120px;
+  }
+
+  .zoom-far .sg-pin {
+    transform: scale(0.5);
+  }
+}
+
+/* Modificadores globales para forzar el pop-up en miniatura */
+.mini-popup .leaflet-popup-content-wrapper {
+  padding: 1px;
+  border-radius: 6px;
+}
+.mini-popup .leaflet-popup-content {
+  margin: 6px;
+  line-height: 1.1;
+}
+.mini-popup .leaflet-popup-tip {
+  width: 12px;
+  height: 12px;
 }

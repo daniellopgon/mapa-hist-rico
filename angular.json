@@ -20,7 +20,9 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [],
+            "assets": [
+              "assets"
+            ],
             "styles": [
               "node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
