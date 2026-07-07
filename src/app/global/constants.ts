@@ -1,24 +1,17 @@
 import { DatosMapa } from '../models/datos-mapa';
 
-/**
- * Configuración general del mapa
- */
 export const CONFIG_MAPA = {
-    // Límites EXACTOS de la imagen histórica (ArcGIS)
     LIMITES_AVILA: [
         [40.6481, -4.7111],
         [40.6616, -4.6852]
     ] as [[number, number], [number, number]],
     
-    // Centro geográfico por defecto
     CENTRO_AVILA: [40.656, -4.700] as [number, number],
     
-    // Configuración de zoom
     ZOOM_INICIAL: 16,
     MIN_ZOOM_LOD: 15,
     MAX_ZOOM: 18,
 
-    // Capa base
     ARCGIS_URL: 'https://tiles.arcgis.com/tiles/tIcvkZLogWoN4oaH/arcgis/rest/services/Benito_Chías_y_Carbó_1932/MapServer/tile/{z}/{y}/{x}',
     ATRIBUCION: 'Plano de Ávila por Benito Chías y Carbó, 1932 (JCYL / IGN)'
 };

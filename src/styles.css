@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
   --dare-teal: #039199;
   --dare-teal-dark: #027177;
@@ -18,15 +17,13 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #ebdcb0; /* Color pergamino/antiguo para disimular bordes */
+  background-color: #ebdcb0; 
 }
 
-/* Sobrescribir el gris por defecto de Leaflet para que los bordes blancos sean pergamino */
 .leaflet-container {
   background-color: #ebdcb0 !important;
 }
 
-/* --- SmartGuide Pin Avanzado --- */
 .smartguide-marker {
   display: flex;
   flex-direction: column;
@@ -108,9 +105,6 @@ html, body {
   opacity: 0.8;
 }
 
-/* --- Estados de Zoom y Responsive --- */
-
-/* Cuando el usuario aleja la cámara (zoom-far) */
 .zoom-far .sg-label {
   opacity: 0;
   pointer-events: none;
@@ -121,7 +115,6 @@ html, body {
   transform-origin: bottom center;
 }
 
-/* Ajustes para móviles (pantallas pequeñas) */
 @media (max-width: 768px) {
   .sg-pin {
     transform: scale(0.8);
@@ -139,7 +132,6 @@ html, body {
   }
 }
 
-/* Modificadores globales para forzar el pop-up en miniatura */
 .mini-popup .leaflet-popup-content-wrapper {
   padding: 1px;
   border-radius: 6px;

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Marcador } from '../../models/datos-mapa';
 
 @Component({
@@ -7,6 +7,6 @@ import { Marcador } from '../../models/datos-mapa';
   templateUrl: './mapa-pin.component.html'
 })
 export class MapaPinComponent {
-  public marcador = input.required<Marcador>();
-  public isGray = input<boolean>(false);
+  @Input({ required: true }) marcador!: Marcador;
+  @Input() isGray: boolean = false;
 }
