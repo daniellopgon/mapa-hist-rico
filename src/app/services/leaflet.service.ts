@@ -177,7 +177,7 @@ export class ServicioVisorMapa {
             zIndexOffset: 100
         }).addTo(this.mapaInstancia!);
 
-        marker.bindPopup(popupElement, { maxWidth: 75, minWidth: 65, className: 'mini-popup' });
+        marker.bindPopup(popupElement, { maxWidth: 450, minWidth: 420 });
       });
 
       cantidadPinesAñadidos = marcadores.length;
