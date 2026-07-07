@@ -1,0 +1,146 @@
+:root {
+  --dare-teal: #039199;
+  --dare-teal-dark: #027177;
+  --white: #ffffff;
+  --bg-gray: #f7f7f7;
+  --text-primary: #1a1a2e;
+  --text-secondary: #444444;
+  --text-muted: #666666;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --radius: 16px;
+  --color-error: #ff4d4d;
+  --bg-progreso: #e0f2f1;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ebdcb0; 
+}
+
+.leaflet-container {
+  background-color: #ebdcb0 !important;
+}
+
+.smartguide-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: max-content;
+  transform-origin: bottom center;
+  transition: all 0.3s ease;
+}
+
+.sg-pin {
+  width: 60px;
+  height: 72px;
+  background-color: white;
+  clip-path: path('M30,0 C13.2,0 0,13.2 0,30 C0,51 30,72 30,72 C30,72 60,51 60,30 C60,13.2 46.8,0 30,0 Z');
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.sg-marker-color .sg-pin {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.sg-marker-gray .sg-pin {
+  background-color: transparent;
+  clip-path: none;
+}
+
+.sg-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 5px;
+  transition: all 0.3s ease;
+}
+
+.sg-marker-color .sg-photo {
+  clip-path: circle(50%);
+}
+
+.sg-marker-gray .sg-photo {
+  filter: grayscale(1) opacity(0.5);
+  border-radius: 50%;
+  top: 0;
+}
+
+
+
+.sg-label {
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 300;
+  text-align: center;
+  max-width: 144px;
+  line-height: 1.2;
+  position: relative;
+  margin-top: -30px;
+  z-index: 80;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.sg-marker-color .sg-label {
+  background-color: rgba(35, 35, 35, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sg-marker-gray .sg-label {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+}
+
+.zoom-far .sg-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.zoom-far .sg-pin {
+  transform: scale(0.6);
+  transform-origin: bottom center;
+}
+
+@media (max-width: 768px) {
+  .sg-pin {
+    transform: scale(0.8);
+    transform-origin: bottom center;
+  }
+
+  .sg-label {
+    font-size: 9px;
+    padding: 3px 8px;
+    max-width: 120px;
+  }
+
+  .zoom-far .sg-pin {
+    transform: scale(0.5);
+  }
+}
+
+.mini-popup .leaflet-popup-content-wrapper {
+  padding: 1px;
+  border-radius: 6px;
+}
+.mini-popup .leaflet-popup-content {
+  margin: 6px;
+  line-height: 1.1;
+}
+.mini-popup .leaflet-popup-tip {
+  width: 12px;
+  height: 12px;
+}
