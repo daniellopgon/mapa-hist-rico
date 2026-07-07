@@ -28,8 +28,9 @@ export const CONFIG_ICONO = {
         anclajeIcono: [12, 41] as [number, number]
     },
     PUNTO_INTERES: {
-        tamano: [30, 30] as [number, number],
-        anclaje: [15, 15] as [number, number]
+        tamano: [150, 100] as [number, number],
+        anclaje: [75, 72] as [number, number],
+        anclajePopup: [0, -25] as [number, number]
     }
 };
 
