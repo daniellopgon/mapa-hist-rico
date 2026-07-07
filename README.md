@@ -1,62 +1,36 @@
-# Mapa Histórico de Ávila 🏰
+# Mapa Histórico de Ávila
 
-Aplicación web interactiva desarrollada con **Angular 21** y **Leaflet** que permite explorar el plano histórico de Ávila dibujado por Benito Chías y Carbó en 1932. La aplicación superpone puntos de interés (PDIs) interactivos sobre la cartografía original servida por el Instituto Geográfico Nacional (IGN) mediante ArcGIS.
+Aplicación web interactiva desarrollada con **Angular 21** y **Leaflet** que permite explorar el plano histórico de Ávila dibujado por Benito Chías y Carbó en 1932. La aplicación superpone puntos de interés interactivos sobre la cartografía original servida por el Instituto Geográfico Nacional IGN mediante ArcGIS.
 
 <p align="center">
   <!-- ESPACIO PARA SCREENSHOT GENERAL -->
-  <img src="docs/screenshots/mapa-general.jpg" alt="Vista general del Mapa Histórico de Ávila" width="800">
+ <img width="1377" height="611" alt="1" src="https://github.com/user-attachments/assets/767eb242-8117-431a-8606-172f449160d3" />
 </p>
 
-## ✨ Características Principales
+## Características Principales
 
 *   **Cartografía Histórica:** Integración fluida del plano de 1932 mediante *TileLayers* de ArcGIS.
-*   **Puntos de Interés Interactivos:** Chinchetas personalizadas con fotografías integradas de cada monumento.
-*   **Arquitectura Desacoplada (Clean Architecture):** Uso del paradigma *Dumb Component* (Componentes Presentacionales) de Angular inyectados de forma dinámica (`createComponent()`) dentro del ecosistema Canvas de Leaflet.
-*   **Renderizado de Pop-ups Nativos:** Ventanas emergentes programadas 100% en HTML/CSS desde componentes de Angular (sin HTML incrustado en strings).
-*   **Zoom y Cámara Inteligente:** Límites de navegación (Max Bounds) ajustados dinámicamente según la resolución de la pantalla para evitar que el usuario se salga del plano histórico.
+*   **Puntos de Interés Interactivos:** Pines personalizados con fotografías integradas de cada monumento.
+*   **Renderizado de Pop-ups Nativos:** Ventanas emergentes programadas 100% en HTML/CSS desde componentes de Angular.
+*   **Zoom y Cámara Inteligente:** Límites de navegación ajustados dinámicamente según la resolución de la pantalla para evitar que el usuario se salga del plano histórico.
 
-## 📸 Capturas de Pantalla
+## Capturas de Pantalla
 
 ### Detalle de Marcadores y Pop-ups
-<!-- ESPACIO PARA SCREENSHOT DEL POPUP -->
-![Detalle de Pop-up interactivo](docs/screenshots/detalle-popup.jpg)
+<img width="1212" height="720" alt="2" src="https://github.com/user-attachments/assets/247285c0-10c2-4a0d-be6a-7909a394d3fc" />
 
-### Vista en Dispositivos Móviles
-<!-- ESPACIO PARA SCREENSHOT MÓVIL -->
-![Vista Responsive](docs/screenshots/vista-movil.jpg)
+<img width="1422" height="812" alt="3" src="https://github.com/user-attachments/assets/cb35b4e3-c2c4-4d5a-b863-ad275d703681" />
 
-## 🛠️ Tecnologías y Patrones
 
-*   **Framework:** Angular (Standalone Components).
+## Tecnologías y Patrones
+
+*   **Framework:** Angular.
 *   **Mapas:** Leaflet.js Vanilla.
-*   **Tipado:** TypeScript con interfaces estrictas (`DatosMapa`, `Marcador`).
-*   **Estilos:** Vanilla CSS (evitando frameworks externos para máximo rendimiento y control gráfico), tipografía Inter.
+*   **Tipado:** TypeScript .
+*   **Estilos:** Vanilla CSS
 *   **Inyección de dependencias:** Uso intensivo de `EnvironmentInjector` y `ApplicationRef` para integrar el ciclo de vida de Angular con librerías externas que gestionan su propio DOM.
 
-## 🚀 Instalación y Despliegue
-
-Sigue estos pasos para arrancar el proyecto en tu entorno local:
-
-1. **Clona el repositorio:**
-   ```bash
-   git clone [TU_URL_DE_GITHUB]
-   cd mapa_avila
-   ```
-
-2. **Instala las dependencias:**
-   ```bash
-   npm install
-   ```
-
-3. **Inicia el servidor de desarrollo:**
-   ```bash
-   ng serve
-   ```
-
-4. **Abre la aplicación:**
-   Navega a `http://localhost:4200/` en tu navegador. El proyecto se recargará automáticamente si haces cambios en el código fuente.
-
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 *   `src/app/components/mapa/`: Componente central envoltorio de Angular.
 *   `src/app/components/mapa-pin/`: Componente visual presentacional para las chinchetas.
