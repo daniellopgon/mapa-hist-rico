@@ -1,6 +1,7 @@
 export interface Marcador {
     nombre: string;
     coordenadas: [number, number];
+    imagen?: string;
 }
 
 export interface DatosMapa {

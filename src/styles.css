@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --dare-teal: #039199;
+  --dare-teal-dark: #027177;
+  --white: #ffffff;
+  --bg-gray: #f7f7f7;
+  --text-primary: #1a1a2e;
+  --text-secondary: #444444;
+  --text-muted: #666666;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --radius: 16px;
+  --color-error: #ff4d4d;
+  --bg-progreso: #e0f2f1;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ebdcb0; /* Color pergamino/antiguo para disimular bordes */
+}
+
+/* Sobrescribir el gris por defecto de Leaflet para que los bordes blancos sean pergamino */
+.leaflet-container {
+  background-color: #ebdcb0 !important;
+}
+
+/* --- SmartGuide Pin Avanzado --- */
+.smartguide-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: max-content;
+  transform-origin: bottom center;
+  transition: all 0.3s ease;
+}
+
+.sg-pin {
+  width: 100px;
+  height: 120px;
+  background-color: white;
+  clip-path: path('M50,0 C22,0 0,22 0,50 C0,85 50,120 50,120 C50,120 100,85 100,50 C100,22 78,0 50,0 Z');
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.sg-marker-color .sg-pin {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.sg-marker-gray .sg-pin {
+  background-color: transparent;
+  clip-path: none;
+}
+
+.sg-photo {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 7px;
+  transition: all 0.3s ease;
+}
+
+.sg-marker-color .sg-photo {
+  clip-path: circle(50%);
+}
+
+.sg-marker-gray .sg-photo {
+  filter: grayscale(1) opacity(0.5);
+  border-radius: 50%;
+  top: 0;
+}
+
+.sg-star {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f5b01c;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border: 2px solid white;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.sg-marker-gray .sg-star {
+  opacity: 0.5;
+  background-color: #888;
+  border-color: transparent;
+}
+
+.sg-label {
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  max-width: 240px;
+  line-height: 1.2;
+  position: relative;
+  margin-top: -50px;
+  z-index: 80;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.sg-marker-color .sg-label {
+  background-color: rgba(35, 35, 35, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sg-marker-gray .sg-label {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+}

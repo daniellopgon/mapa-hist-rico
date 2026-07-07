@@ -1,12 +1,26 @@
+import { DatosMapa } from '../models/datos-mapa';
+
 /**
  * Configuración general del mapa
  */
 export const CONFIG_MAPA = {
-    URL_DATOS: '/data.json?v=' + Date.now(),
-    ZOOM_POR_DEFECTO: 15,
-    WMS_URL: 'https://www.ign.es/wms/primera-edicion-mtn',
-    WMS_CAPAS: 'MTN25-1edition-c',
-    ATRIBUCION: '© Instituto Geográfico Nacional de España'
+    // Límites EXACTOS de la imagen histórica (ArcGIS)
+    LIMITES_AVILA: [
+        [40.6481, -4.7111],
+        [40.6616, -4.6852]
+    ] as [[number, number], [number, number]],
+    
+    // Centro geográfico por defecto
+    CENTRO_AVILA: [40.656, -4.700] as [number, number],
+    
+    // Configuración de zoom
+    ZOOM_INICIAL: 16,
+    MIN_ZOOM_LOD: 15,
+    MAX_ZOOM: 19,
+
+    // Capa base
+    ARCGIS_URL: 'https://tiles.arcgis.com/tiles/tIcvkZLogWoN4oaH/arcgis/rest/services/Benito_Chías_y_Carbó_1932/MapServer/tile/{z}/{y}/{x}',
+    ATRIBUCION: 'Plano de Ávila por Benito Chías y Carbó, 1932 (JCYL / IGN)'
 };
 
 /**
@@ -23,16 +37,36 @@ export const CONFIG_ICONO = {
     PUNTO_INTERES: {
         tamano: [30, 30] as [number, number],
         anclaje: [15, 15] as [number, number]
-    }
 };
 
-/**
- * Información visual de las ciudades (nombres e imágenes)
- */
-export const INFO_CIUDADES: Record<string, { nombre: string; imagen: string | null }> = {
-    avila: { nombre: 'Ávila', imagen: '/avila.png' },
-    salamanca: { nombre: 'Salamanca', imagen: '/salamanca.jpg' },
-    madrid: { nombre: 'Madrid', imagen: '/madrid.png' },
-    'madrid-arte': { nombre: 'Madrid Arte', imagen: '/madrid-arte.png' },
-    'ruta-salamanca-google': { nombre: 'Salamanca', imagen: '/salamanca.jpg' },
+export const MAPA_AVILA_MOCK: DatosMapa = {
+    id: 'avila-001',
+    idCiudad: 'avila',
+    nombre: 'Ávila Monumental',
+    cliente: 'Demo Local',
+    direccion: 'Centro histórico',
+    zoom: 16,
+    centroCiudad: [40.656, -4.700],
+    marcadores: [
+        { 
+            nombre: 'Casa de los Verdugo', 
+            coordenadas: [40.6581, -4.6966],
+            imagen: 'assets/casa-de-los-verdugo.jpg'
+        },
+        { 
+            nombre: 'Muralla - Puerta de San Segundo', 
+            coordenadas: [40.6575, -4.7072],
+            imagen: 'assets/muralla-puerta-del-puente-o-de-san-segundo.jpg'
+        },
+        { 
+            nombre: 'Muralla - Puerta del Rastro', 
+            coordenadas: [40.6542, -4.6995],
+            imagen: 'assets/muralla-puerta-del-rastro.jpg'
+        },
+        { 
+            nombre: 'Iglesia de San Pedro', 
+            coordenadas: [40.6555, -4.6935],
+            imagen: 'assets/san-pedro.jpg'
+        }
+    ]
 };
